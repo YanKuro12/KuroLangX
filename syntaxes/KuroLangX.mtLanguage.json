@@ -1,20 +1,18 @@
 {
-  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
   "name": "KuroLangX",
   "scopeName": "source.kuro",
+  "fileTypes": ["kuro", "kuroc"],
   "patterns": [
     { "include": "#keywords" },
     { "include": "#strings" },
-    { "include": "#numbers" },
-    { "include": "#comments" },
-    { "include": "#functions" }
+    { "include": "#comments" }
   ],
   "repository": {
     "keywords": {
       "patterns": [
         {
           "name": "keyword.control.kuro",
-          "match": "\\b(var|FuncGroup|if|else|return|import|as)\\b"
+          "match": "\\b(FuncGroup|var|import|return|if|else)\\b"
         }
       ]
     },
@@ -27,14 +25,16 @@
         }
       ]
     },
-    "numbers": {
+    "comments": {
       "patterns": [
         {
-          "name": "constant.numeric.kuro",
-          "match": "\\b\\d+\\b"
+          "name": "comment.line.number-sign.kuro",
+          "match": "#.*$"
         }
       ]
-    },
+    }
+  }
+}    },
     "comments": {
       "patterns": [
         {
